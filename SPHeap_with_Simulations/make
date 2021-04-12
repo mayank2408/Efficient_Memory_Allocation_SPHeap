@@ -1,0 +1,8 @@
+a.out: client1.o impl.o 
+	gcc client1.o impl.o -lm
+
+client1.o: client1.c header1.h
+	gcc -c client1.c
+
+impl.o: impl.c header1.h
+	gcc -c impl.c -lm

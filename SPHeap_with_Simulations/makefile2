@@ -1,0 +1,10 @@
+a.out: my_client.o my_impl.o impl.o
+	gcc my_client.o my_impl.o impl.o -lm
+
+my_client.o: my_impl.c header2.h header1.h
+	gcc -c my_client.c
+
+my_impl.o: my_impl.c header2.h header1.h
+	gcc -c my_impl.c
+impl.o: impl.c header1.h
+	gcc -c impl.c -lm
